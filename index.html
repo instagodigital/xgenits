@@ -290,6 +290,10 @@
       .services-grid{grid-template-columns:repeat(2,1fr)}
       .testimonials{grid-template-columns:1fr}
       .footer-content{flex-direction:column; gap:8px; text-align:center;}
+      .stats{flex-wrap:wrap; gap:8px}
+      .stat{min-width:100px; flex:1}
+      .actions{flex-wrap:wrap; gap:8px}
+      .actions .btn{flex:1; min-width:140px; text-align:center}
     }
     /* Ensure anchor links account for the fixed header height */
     /* Use scroll-padding on the root and scroll-margin on headings so in-page anchors land correctly */
@@ -305,10 +309,55 @@
       .services-grid{grid-template-columns:1fr}
       .header-content{padding:0 16px;}
       .wrap{padding:36px 16px;}
+      .hero{margin-top:20px; gap:20px}
+      .stats{flex-direction:column; gap:8px}
+      .stat{min-width:auto; width:100%}
+      .actions{flex-direction:column; gap:8px}
+      .actions .btn{width:100%; min-width:auto}
+      .section-head{flex-direction:column; align-items:flex-start; gap:8px}
+      .two-col{grid-template-columns:1fr; gap:20px}
+      .card{padding:16px}
+      .service{padding:14px}
+      .test{padding:12px}
+      .tos{padding:14px}
+      .feature{gap:10px}
+      .feature .icon{width:36px; height:36px; flex:0 0 36px}
+      .brand-title .name{font-size:16px}
+      .brand-title .tag{font-size:11px}
+      .btn{padding:8px 12px; font-size:13px}
+      .btn-primary, .btn-ghost{width:100%; text-align:center}
+      .mobile-nav{padding:16px}
+      .mobile-nav a{padding:10px 0; font-size:15px}
+      .footer-content{font-size:12px; padding:0 16px}
+      .footer-content div{margin:4px 0}
+      /* Contact form mobile improvements */
+      #contact .card{width:100%; margin-top:20px}
+      #contact form{max-width:100%}
+      #contact input, #contact textarea{font-size:16px; padding:12px}
+      /* Engagement models mobile */
+      #models .card{min-height:auto}
+      #models .card h3{font-size:16px; margin:4px 0}
+      #models .card p{font-size:14px}
+      #models .card ul{font-size:13px}
     }
     /* small */
-    input, textarea{width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit}
+    input, textarea{width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; font-size:14px}
     [data-theme="light"] input, [data-theme="light"] textarea{border:1px solid rgba(0,0,0,0.1);}
+    
+    /* Additional mobile improvements */
+    @media (max-width:768px){
+      .hero .card{margin-top:20px}
+      .services-grid{gap:12px}
+      .service h3{font-size:16px}
+      .service p{font-size:14px}
+      .testimonials{gap:10px}
+      .test strong{font-size:14px; line-height:1.4}
+      .test .muted{font-size:12px}
+      .feature strong{font-size:14px}
+      .feature .muted{font-size:13px}
+      .section-head h2{font-size:24px}
+      .section-head .muted{font-size:14px}
+    }
     .muted{color:var(--muted)}
 
     /* Updated text colors for better contrast */
@@ -363,7 +412,7 @@
         <a href="#services">Services</a>
         <a href="#models">Engagement</a>
         <a href="#why">Why Us</a>
-        <a href="#contact" class="btn-ghost" style="padding:9px 12px; border-radius:10px">Contact</a>
+        <a href="#contact" class="btn-ghost" style="padding:9px 12px; border-radius:10px">Contact Us</a>
       </nav>
 
       <div style="display:flex; gap:10px; align-items:center">
@@ -390,7 +439,7 @@
     <a href="#services" onclick="closeMobileMenu()">Services</a>
     <a href="#models" onclick="closeMobileMenu()">Engagement</a>
     <a href="#why" onclick="closeMobileMenu()">Why Us</a>
-    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
   </nav>
 
   <div class="wrap">
@@ -637,7 +686,7 @@
     <section id="contact" style="margin-top:40px">
       <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start">
         <div style="flex:1; min-width:300px">
-          <h2>Contact us</h2>
+          <h2>Contact Us</h2>
           <p class="muted">Share the role, skills required, timeline and expected start date — we'll respond within one business day.</p>
 
           <!-- CONTACT FORM: posts directly to Formsubmit.co -->
@@ -660,7 +709,6 @@
     <button class="btn btn-primary" type="submit">Request Shortlist</button>
     <a class="btn btn-ghost" href="mailto:info@xgenits.com?subject=Hiring%20enquiry">Email us</a>
   </div>
-  <!-- <div id="formMessage" class="muted" style="font-size:13px; margin-top:6px">Submissions handled by Formsubmit.co — verify info@xgenits.com on first submit.</div> -->
 </form>
 
 <script>
