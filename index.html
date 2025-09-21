@@ -641,7 +641,7 @@
           <p class="muted">Share the role, skills required, timeline and expected start date — we'll respond within one business day.</p>
 
           <!-- CONTACT FORM: posts directly to Formsubmit.co -->
-           <form id="contactForm" action="https://formsubmit.co/ajax/info@xgenits.com" method="POST" style="margin-top:12px; display:grid; gap:10px; max-width:720px;">
+<form id="contactForm" action="https://formsubmit.co/ajax/info@xgenits.com" method="POST" style="margin-top:12px; display:grid; gap:10px; max-width:720px;">
   <!-- Formsubmit hidden fields -->
   <input type="hidden" name="_subject" value="Website contact: New message">
   <input type="hidden" name="_captcha" value="false">
@@ -660,7 +660,9 @@
     <button class="btn btn-primary" type="submit">Request Shortlist</button>
     <a class="btn btn-ghost" href="mailto:info@xgenits.com?subject=Hiring%20enquiry">Email us</a>
   </div>
-  <!-- <div id="formMessage" class="muted" style="font-size:13px; margin-top:6px">Submissions handled by Formsubmit.co — verify info@xgenits.com on first submit.</div> -->
+
+  <!-- Message box -->
+  <div id="formMessage" class="muted" style="font-size:13px; margin-top:6px"></div>
 </form>
 
 <script>
@@ -681,7 +683,7 @@
 
       if (response.ok) {
         formMessage.textContent = '✅ Thank you! Your message has been sent.';
-        form.reset(); // Clear form fields
+        form.reset(); // Clear all input fields
       } else {
         const data = await response.json();
         if (data.errors) {
