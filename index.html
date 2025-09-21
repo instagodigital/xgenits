@@ -1,4 +1,3 @@
-You said:
 <!doctype html>
 <html lang="en">
 <head>
@@ -634,8 +633,15 @@ You said:
       </div>
     </section>
 
-    <!-- CONTACT FORM: posts directly to Formsubmit.co -->
-<form id="contactForm" action="https://formsubmit.co/ajax/info@xgenits.com" method="POST" style="margin-top:12px; display:grid; gap:10px; max-width:720px;">
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:40px">
+      <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start">
+        <div style="flex:1; min-width:300px">
+          <h2>Contact us</h2>
+          <p class="muted">Share the role, skills required, timeline and expected start date — we'll respond within one business day.</p>
+
+          <!-- CONTACT FORM: posts directly to Formsubmit.co -->
+           <form id="contactForm" action="https://formsubmit.co/ajax/info@xgenits.com" method="POST" style="margin-top:12px; display:grid; gap:10px; max-width:720px;">
   <!-- Formsubmit hidden fields -->
   <input type="hidden" name="_subject" value="Website contact: New message">
   <input type="hidden" name="_captcha" value="false">
@@ -652,54 +658,47 @@ You said:
 
   <div style="display:flex; gap:10px; margin-top:6px">
     <button class="btn btn-primary" type="submit">Request Shortlist</button>
-    <a class="btn btn-ghost" 
-       href="https://mail.google.com/mail/?view=cm&to=info@xgenits.com&su=Xgenits%20Web%20Enquiry" 
-       target="_blank">
-       Email us
-    </a>
+    <a class="btn btn-ghost" href="mailto:info@xgenits.com?subject=Hiring%20enquiry">Email us</a>
   </div>
-
-  /* <div id="formMessage" class="muted" style="font-size:13px; margin-top:6px">
-    Submissions handled by Formsubmit.co — verify info@xgenits.com on first submit.
-  </div> */
+  <!-- <div id="formMessage" class="muted" style="font-size:13px; margin-top:6px">Submissions handled by Formsubmit.co — verify info@xgenits.com on first submit.</div> -->
 </form>
 
 <script>
-const form = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault(); // Prevent default page reload
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Prevent default page reload
 
-  const formData = new FormData(form);
+    const formData = new FormData(form);
 
-  try {
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
 
-    if (response.ok) {
-      formMessage.textContent = '✅ Thank you! Your message has been sent.';
-      form.reset(); // Clear form fields
-    } else {
-      const data = await response.json();
-      if (data.errors) {
-        formMessage.textContent = '⚠️ ' + data.errors.map(e => e.message).join(', ');
+      if (response.ok) {
+        formMessage.textContent = '✅ Thank you! Your message has been sent.';
+        form.reset(); // Clear form fields
       } else {
-        formMessage.textContent = '⚠️ Something went wrong. Please try again.';
+        const data = await response.json();
+        if (data.errors) {
+          formMessage.textContent = '⚠️ ' + data.errors.map(e => e.message).join(', ');
+        } else {
+          formMessage.textContent = '⚠️ Something went wrong. Please try again.';
+        }
       }
+    } catch (error) {
+      formMessage.textContent = '⚠️ Network error. Please try again.';
     }
-  } catch (error) {
-    formMessage.textContent = '⚠️ Network error. Please try again.';
-  }
-});
+  });
 </script>
 
            
         </div>
-<div>
+
         <aside style="width:320px" class="card">
           <h4 style="margin:0 0 8px">Office</h4>
           <div class="muted" style="font-size:13px">Remote-first • Offices on request</div>
