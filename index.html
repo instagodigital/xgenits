@@ -640,10 +640,10 @@
           <h2>Contact us</h2>
           <p class="muted">Share the role, skills required, timeline and expected start date — we'll respond within one business day.</p>
 
-          <!-- CONTACT FORM: posts directly to Formsubmit.co -->
+        <!-- CONTACT FORM: posts directly to Formsubmit.co -->
 <form id="contactForm" action="https://formsubmit.co/ajax/info@xgenits.com" method="POST" style="margin-top:12px; display:grid; gap:10px; max-width:720px;">
   <!-- Formsubmit hidden fields -->
-  <input type="hidden" name="_subject" value="Website contact: New message">
+  <input type="hidden" name="_subject" value="Xgenits Web Enquiry: New message">
   <input type="hidden" name="_captcha" value="false">
 
   <!-- Honeypot to reduce spam -->
@@ -658,10 +658,8 @@
 
   <div style="display:flex; gap:10px; margin-top:6px">
     <button class="btn btn-primary" type="submit">Request Shortlist</button>
-    <a class="btn btn-ghost" href="mailto:info@xgenits.com?subject=Hiring%20enquiry">Email us</a>
+    <a class="btn btn-ghost" href="mailto:info@xgenits.com?subject=Xgenits Web Enquiry">Email us</a>
   </div>
-
-  <!-- Message box -->
   <div id="formMessage" class="muted" style="font-size:13px; margin-top:6px"></div>
 </form>
 
@@ -683,7 +681,7 @@
 
       if (response.ok) {
         formMessage.textContent = '✅ Thank you! Your message has been sent.';
-        form.reset(); // Clear all input fields
+        form.reset(); // Clear form fields
       } else {
         const data = await response.json();
         if (data.errors) {
@@ -697,6 +695,7 @@
     }
   });
 </script>
+
 
            
         </div>
